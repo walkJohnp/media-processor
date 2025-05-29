@@ -4,8 +4,7 @@ from fastapi.routing import APIRouter
 
 from src.dto.api_response import ApiResponse
 
-logger = logging.getLogger(__name__)
-
+logger = logging.getLogger('appLogger')
 
 router = APIRouter(prefix = "/api")
 

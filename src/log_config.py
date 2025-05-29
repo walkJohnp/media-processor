@@ -35,7 +35,7 @@ def setup_logger(trace_id_context_var:  contextvars.ContextVar):
     file_handler.setLevel(logging.DEBUG)
 
     # 创建格式器
-    formatter = logging.Formatter(os.getenv('config.format'), datefmt='%Y-%m-%d %H:%M:%S')
+    formatter = logging.Formatter(os.getenv('log.format'), datefmt='%Y-%m-%d %H:%M:%S')
     file_handler.setFormatter(formatter)
 
     # 添加处理器到 logger
