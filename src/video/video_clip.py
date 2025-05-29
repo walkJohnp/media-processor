@@ -8,7 +8,7 @@ def merge_video(video_list, output_video):
     :param output_video: 合并后的视频
     :return:
     """
-    ffmpge.concat(video_list).output(output_video).run()
+    ffmpeg.concat(video_list).output(output_video).run()
 
 
 
