@@ -4,10 +4,7 @@ import os
 from logging.handlers import RotatingFileHandler
 
 
-
-
 class ContextFilter(logging.Filter):
-
     def __init__(self, trace_id_var:  contextvars.ContextVar):
         super().__init__()
         self.trace_id_var = trace_id_var
@@ -23,7 +20,7 @@ def setup_logger(trace_id_context_var:  contextvars.ContextVar):
     os.makedirs(log_path, exist_ok=True)
 
     # 构建日志文件的完整路径
-    log_file = os.path.join(log_path, 'app.config')
+    log_file = os.path.join(log_path, 'app.log')
 
     logger = logging.getLogger('appLogger')
     log_level = os.getenv('log.level')
