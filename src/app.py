@@ -47,17 +47,12 @@ class App:
         print("build app")
 
 
-_app_instance = None  # 防止 app 被重复创建
-
 def build_app(path) -> FastAPI:
-    global _app_instance
-    if _app_instance:
-        return _app_instance
-
-    set_env(path)
     app = FastAPI(lifespan=lifespan)
-    _app_instance = app
     app.middleware("http")(add_trace_id_to_context)  # 注册中间件
+
+    # 加载环境变量
+    set_env(path)
 
     # 注册路由
     register_routes(app)
