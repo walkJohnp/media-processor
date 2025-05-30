@@ -4,8 +4,8 @@ from sqlalchemy.ext.declarative import declarative_base
 
 class CustomBase:
     # 添加公共字段
-    created_at = Column(DateTime, default=func.now())
-    updated_at = Column(DateTime, onupdate=func.now())
+    created_time = Column(DateTime, default=func.now())
+    updated_time = Column(DateTime, onupdate=func.now())
 
     created_by = Column(String(50))
     updated_by = Column(String(50))
@@ -18,4 +18,4 @@ class CustomBase:
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
-Base = declarative_base(cls = CustomBase)
+Base = declarative_base(cls=CustomBase)

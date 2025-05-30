@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, BIGINT
 
-from .CustomBase import Base
+from src.dao.CustomBase import Base
 
 
 class AuditRecord(Base):
@@ -10,8 +10,3 @@ class AuditRecord(Base):
     content_id = Column(BIGINT)
     machine_audit_status = Column(String(50)) # 机器审核状态
     human_audit_status = Column(String(50))
-
-    created_at = Column(String(50))
-    updated_at = Column(String(50))
-    created_by = Column(String(50))
-    updated_by = Column(String(50))
