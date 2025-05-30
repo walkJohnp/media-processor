@@ -14,7 +14,7 @@ class ContextFilter(logging.Filter):
 
 def setup_logger(trace_id_context_var:  contextvars.ContextVar):
     # 从 .env 文件读取 LOG_PATH
-    log_path = os.getenv('LOG_PATH', 'logs')  # 如果未设置，默认使用 'logs' 目录
+    log_path = os.getenv('LOG_PATH', '../logs')  # 如果未设置，默认使用 'logs' 目录
 
     # 确保日志目录存在
     os.makedirs(log_path, exist_ok=True)
